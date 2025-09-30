@@ -1,5 +1,6 @@
 package nl.tudelft.jpacman.board;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -28,7 +29,7 @@ class BoardTest {
      */
     @Test
     void verifyWidth() {
-        // TODO
+        Assertions.assertEquals(MAX_WIDTH, board.getWidth());
     }
 
     /**
@@ -36,7 +37,7 @@ class BoardTest {
      */
     @Test
     void verifyHeight() {
-        // TODO
+        Assertions.assertEquals(MAX_HEIGHT, board.getHeight());
     }
 
     /**
@@ -46,11 +47,11 @@ class BoardTest {
      */
     @ParameterizedTest
     @CsvSource({
-            "0, 0",
-            "1, 2",
+        "0, 0",
+        "1, 2",
         "0, 1"
     })
     void testSquareAt(int x, int y) {
-        // TODO
+        Assertions.assertTrue(board.withinBorders(x, y));
     }
 }
